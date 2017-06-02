@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+<head>
+	<title>Find a Pet</title>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.0/css/mdb.min.css">
+</head>
+<body>
+	<div class = "row">
+		<div class = 'page-header'>Find a Pet</div>
+	</div>
+	<div class = "row">
+		<div class = "form">
+			<div class = 'col-md-4 col-md-offset-2'>
+				<div class = "form-body" id ="formbody">
+					<label for = "zipCode">ZIP Code:</label>
+					<input type="text" name="zipCode" maxlength="5" style = 'width: 100px; text-align: center' id = 'zipCode' placeholder="5 digits">
+					<label for = "animaltype"> Type of Animal:</label>
+					<input type="text" name="animaltype" id = "animaltype" style = 'width: 150px; text-align: center' placeholder="dog, cat, horse">
+					<button class = "btn btn-primary" id = "searchButton" disabled="disabled">SEARCH</button>
+				</div>
+				<p id ="displaytext">Click on an image to display more pictures</p>
+			</div>
+		</div>
+	</div>
+	<div class = "jumbotron" id = "initialdisplay">
+		<div class = "row" id = 'listanimals'>
+		</div>
+	</div>
+	<div class = "jumbotron" id = "picturedisplay">
+		<div class = "row" id = 'showanimal'>
+		</div>
+	</div>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src = "../assets/javascript/app.js">
+
+
+
+
+</script>
+
+
+	
+</body>
+</html>
