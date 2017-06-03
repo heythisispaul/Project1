@@ -24,7 +24,7 @@
 			//remove next 10 button
 			$('#next10').remove();
 			//clear the division of previous info
-			$('#listanimals').empty();
+			$('#initialdisplay').empty();
 
 			//zip code value
 			var zipCode = $('#zipCode').val().trim();
@@ -37,7 +37,7 @@
 			//offset=count to return next 10 results
 			var lastoffset = 0;
 			//url for ajax request w/ variables
-			var queryURL = "http://api.petfinder.com/pet.find?format=json&key=dced171da3616db767dede0c93058383&callback=?&location="+zipCode+"&count=10&animal="+typeAnimal+"&output=full&offset="+ lastoffset;
+			var queryURL = "http://api.petfinder.com/pet.find?format=json&key=dced171da3616db767dede0c93058383&callback=?&location="+zipCode+"&count=20&animal="+typeAnimal+"&output=full&offset="+ lastoffset;
 
 			
 
@@ -50,34 +50,107 @@
 
 				//list of pets from response object
 				var petArray = response.petfinder.pets.pet;
-				console.log(petArray);
-
-
-
-				for (var i = 0; i < petArray.length; i++) {
 					
-					//create new div for each animal
-					var newDiv= $('<div>');
+
+				var table = $('<table><tr id = "tr1"></tr><tr id = "tr2"></tr><tr id = "tr3"></tr><tr id = "tr4"></tr></table>');
+				
+
+				$('#initialdisplay').append(table);
+
+
+				for (var i = 0; i < 5; i++) {
+					
+					//create new div for each animal w/ unique id for wrapping content
+					var td= $('<td id = "pic'+[i]+'">');
+
 					//animal name
-					var name = petArray[i].name.$t;
-					
+					var name = $('<p>' + petArray[i].name.$t + '</p>');					
 					 
 					//picture of animal
 					var pic = petArray[i].media.photos.photo[1].$t;
+
 					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
 					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
 
-					//append all info w/ <br>'s
-					newDiv.append(name + "<br>");
-					newDiv.append(animalPicture);
-					
-					
-						
-					//append newDiv to #listanimals on page
-					$('#listanimals').append(newDiv);
+
+					//append all info as td
+					td.append(name);
+					td.append(animalPicture);
+					$('#tr1').append(td);
 										
-				//closes for loop
+				//closes 1st for loop
 				}
+
+				for (var j = i; j < 10; j++) {
+					
+					//create new div for each animal w/ unique id for wrapping content
+					var td= $('<td id = "pic'+[j]+'">');
+
+					//animal name
+					var name = $('<p>' + petArray[j].name.$t + '</p>');					
+					 
+					//picture of animal
+					var pic = petArray[j].media.photos.photo[1].$t;
+
+					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
+					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
+
+
+					//append all info as td
+					td.append(name);
+					td.append(animalPicture);
+					$('#tr2').append(td);
+										
+				//closes 2nd for loop
+				}
+
+				for (var k = j; k < 15; k++) {
+					
+					//create new div for each animal w/ unique id for wrapping content
+					var td= $('<td id = "pic'+[k]+'">');
+
+					//animal name
+					var name = $('<p>' + petArray[k].name.$t + '</p>');					
+					 
+					//picture of animal
+					var pic = petArray[k].media.photos.photo[1].$t;
+
+					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
+					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
+
+
+					//append all info as td
+					td.append(name);
+					td.append(animalPicture);
+					$('#tr3').append(td);
+										
+				//closes 3rd for loop
+				}
+
+				for (var l = k; l < 20; l++) {
+					
+					//create new div for each animal w/ unique id for wrapping content
+					var td= $('<td id = "pic'+[l]+'">');
+
+					//animal name
+					var name = $('<p>' + petArray[l].name.$t + '</p>');					
+					 
+					//picture of animal
+					var pic = petArray[l].media.photos.photo[1].$t;
+
+					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
+					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
+
+
+					//append all info as td
+					td.append(name);
+					td.append(animalPicture);
+					$('#tr4').append(td);
+										
+				//closes 4th for loop
+				}
+			
+				
 
 
 				$('#zipCode').val("");
@@ -205,15 +278,17 @@
 			//closes promise
 			});
 
+	//----------------- new button --------------------------------------------------------------------------------------------//
 
-  			var newBtn = $('<btn>').addClass('btn btn-primary').attr('id', 'next10').text('Display next 10 results');
+
+  			var newBtn = $('<btn>').addClass('btn btn-primary').attr('id', 'next10').text('Display next 20 results');
   			$('#formbody').append(newBtn);
 
   			$('#next10').on('click', function(){
 
   				event.preventDefault();
 
-  				$('#listanimals').empty();
+  				$('#initialdisplay').empty();
 
 				//zip code value
 				var zipCode = localStorage.getItem("zipCode");
@@ -222,10 +297,10 @@
 				var typeAnimal = localStorage.getItem("typeAnimal");
 				console.log(typeAnimal);
 				//offset=count to return next 10 results
-				lastoffset = lastoffset + 10;
+				lastoffset = lastoffset + 20;
 				console.log(lastoffset);
 				//url for ajax request w/ variables
-				var queryURL = "http://api.petfinder.com/pet.find?format=json&key=dced171da3616db767dede0c93058383&callback=?&location="+zipCode+"&count=10&animal="+typeAnimal+"&output=full&offset="+ lastoffset;
+				var queryURL = "http://api.petfinder.com/pet.find?format=json&key=dced171da3616db767dede0c93058383&callback=?&location="+zipCode+"&count=20&animal="+typeAnimal+"&output=full&offset="+ lastoffset;
 
 				$.getJSON({
 					url: queryURL,
@@ -237,30 +312,104 @@
 					var petArray = response.petfinder.pets.pet;
 					console.log(petArray);
 
+					var table = $('<table><tr id = "tr1"></tr><tr id = "tr2"></tr><tr id = "tr3"></tr><tr id = "tr4"></tr></table>');
+				
+
+					$('#initialdisplay').append(table);
 
 
-					for (var i = 0; i < petArray.length; i++) {
+					for (var i = 0; i < 5; i++) {
 						
-						//create new div for each animal
-						var newDiv= $('<div>');
+						//create new div for each animal w/ unique id for wrapping content
+						var td= $('<td id = "pic'+[i]+'">');
+
 						//animal name
-						var name = petArray[i].name.$t;
+						var name = $('<p>' + petArray[i].name.$t + '</p>');					
+						 
 						//picture of animal
 						var pic = petArray[i].media.photos.photo[1].$t;
+
 						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
 						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
 
-						//append all info w/ <br>'s
-						newDiv.append(name + "<br>");
-						newDiv.append(animalPicture);
-							
-						//append newDiv to #listanimals on page
-						$('#listanimals').append(newDiv);
+
+						//append all info as td
+						td.append(name);
+						td.append(animalPicture);
+						$('#tr1').append(td);
 											
-					//closes for loop
+					//closes 1st for loop
 					}
 
-					
+					for (var j = i; j < 10; j++) {
+						
+						//create new div for each animal w/ unique id for wrapping content
+						var td= $('<td id = "pic'+[j]+'">');
+
+						//animal name
+						var name = $('<p>' + petArray[j].name.$t + '</p>');					
+						 
+						//picture of animal
+						var pic = petArray[j].media.photos.photo[1].$t;
+
+						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
+
+
+						//append all info as td
+						td.append(name);
+						td.append(animalPicture);
+						$('#tr2').append(td);
+											
+					//closes 2nd for loop
+					}
+
+					for (var k = j; k < 15; k++) {
+						
+						//create new div for each animal w/ unique id for wrapping content
+						var td= $('<td id = "pic'+[k]+'">');
+
+						//animal name
+						var name = $('<p>' + petArray[k].name.$t + '</p>');					
+						 
+						//picture of animal
+						var pic = petArray[k].media.photos.photo[1].$t;
+
+						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
+
+
+						//append all info as td
+						td.append(name);
+						td.append(animalPicture);
+						$('#tr3').append(td);
+											
+					//closes 3rd for loop
+					}
+
+					for (var l = k; l < 20; l++) {
+						
+						//create new div for each animal w/ unique id for wrapping content
+						var td= $('<td id = "pic'+[l]+'">');
+
+						//animal name
+						var name = $('<p>' + petArray[l].name.$t + '</p>');					
+						 
+						//picture of animal
+						var pic = petArray[l].media.photos.photo[1].$t;
+
+						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
+
+
+						//append all info as td
+						td.append(name);
+						td.append(animalPicture);
+						$('#tr4').append(td);
+											
+					//closes 4th for loop
+					}
+
 
 					//when user clicks on animal image
 					$('img').on('click', function(){
