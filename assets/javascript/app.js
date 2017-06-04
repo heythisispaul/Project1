@@ -7,9 +7,9 @@
 	var inputCheck = function() {
 		$('input').on('keyup', function(){
 
-			if ($('#zipCode').val().length === 5 && $('#animaltype').val().length > 2){
+			if ($('#zipCode').val().length === 5 && $.isNumeric($('#zipCode').val()) && $('#animaltype').val().length > 2){
 				$('#searchButton').removeAttr('disabled');
-			}	
+			}
 		});
 	};
 
@@ -26,6 +26,13 @@
 			$('.last20').remove();
 			//clear the division of previous info
 			$('#displayrow').empty();
+			$('#bottombuttons').hide();
+
+  			var showButttons = function(){
+  				$('#bottombuttons').show();
+  			};
+
+  			setTimeout(showButttons, 800);
 			
 
 			//zip code value
@@ -75,7 +82,7 @@
 					var td= $('<td id = "pic'+[i]+'">');
 
 					//animal name
-					var name = $('<p>' + petArray[i].name.$t + '</p>');	
+					var name = $('<p class = "animalname">' + petArray[i].name.$t + '</p>');	
 
 					var breed = "";
 
@@ -88,7 +95,13 @@
 						}
 		
 
-					var sex = $('<p> Sex: ' + petArray[i].sex.$t + '</p>');
+					var sex = petArray[i].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 					var age = $('<p> Age: ' + petArray[i].age.$t + '</p>');				
 					 
@@ -108,7 +121,6 @@
 					td.append(animalPicture);
 					td.append(name);
 					td.append(breed);
-					td.append(sex);
 					td.append(age);
 					$('#tr1').append(td);
 										
@@ -122,7 +134,7 @@
 					var td= $('<td id = "pic'+[j]+'">');
 
 					//animal name
-					var name = $('<p>' + petArray[j].name.$t + '</p>');	
+					var name = $('<p class = "animalname">' + petArray[j].name.$t + '</p>');	
 
 					var breed = "";
 
@@ -135,14 +147,20 @@
 						}
 				
 
-					var sex = $('<p> Sex: ' + petArray[j].sex.$t + '</p>');
+						var sex = petArray[j].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 					var age = $('<p> Age: ' + petArray[j].age.$t + '</p>');				
 					 
 					//picture of animal
 					var pic = "";
 
-					if(petArray[i].media.photos == null){
+					if(petArray[j].media.photos == null){
 						pic = "../assets/images/noimage.jpg";
 						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "nopic");
 
@@ -157,7 +175,6 @@
 					td.append(animalPicture);
 					td.append(name);
 					td.append(breed);
-					td.append(sex);
 					td.append(age);
 					$('#tr2').append(td);
 										
@@ -171,7 +188,7 @@
 					var td= $('<td id = "pic'+[k]+'">');
 
 					//animal name
-					var name = $('<p>' + petArray[k].name.$t + '</p>');	
+					var name = $('<p class="animalname">' + petArray[k].name.$t + '</p>');	
 
 					var breed = "";
 
@@ -184,7 +201,13 @@
 						}
 					
 
-					var sex = $('<p> Sex: ' + petArray[k].sex.$t + '</p>');
+					var sex = petArray[k].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 					var age = $('<p> Age: ' + petArray[k].age.$t + '</p>');				
 					 
@@ -204,7 +227,6 @@
 					td.append(animalPicture);
 					td.append(name);
 					td.append(breed);
-					td.append(sex);
 					td.append(age);
 					$('#tr3').append(td);
 										
@@ -218,7 +240,7 @@
 					var td= $('<td id = "pic'+[l]+'">');
 
 					//animal name
-					var name = $('<p id = "petname">' + petArray[l].name.$t + '</p>');
+					var name = $('<p class = "animalname">' + petArray[l].name.$t + '</p>');
 
 					var breed = "";
 
@@ -231,7 +253,13 @@
 						}
 					
 
-					var sex = $('<p> Sex: ' + petArray[l].sex.$t + '</p>');
+					var sex = petArray[l].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 					var age = $('<p> Age: ' + petArray[l].age.$t + '</p>');		
 					 
@@ -251,7 +279,6 @@
 					td.append(animalPicture);
 					td.append(name);
 					td.append(breed);
-					td.append(sex);
 					td.append(age);
 					$('#tr4').append(td);
 										
@@ -378,6 +405,12 @@
 
 						var newDiv = $('<div>');
 						var newName = $('<p id="indname">'+response.petfinder.pet.name.$t+'</p>');
+						var sex = response.petfinder.pet.sex.$t;
+							if (sex =="M"){
+								newName.css('color', '#428BCA');
+							} else {
+								newName.css('color', '#ff80ab');
+							}
 						var description = $('<p id = "description">');
 						description.text(response.petfinder.pet.description.$t);
 						newDiv.append(newName);
@@ -395,19 +428,26 @@
 			//closes promise
 			});
 
-	//----------------- new button --------------------------------------------------------------------------------------------//
-
+	//----------------- new button -------------------------------------------------------------------------------------------------
+	//-------------------------------------------new button-----------------------------------------------------------------------
 
   			var newBtn = $('<btn>').addClass('btn btn-primary next20').attr('id', 'topnext20').text('Display next 20 results');
   			$('#buttondisplay').append(newBtn);
-  			var btmBtn = $('<btn>').addClass('btn btn-primary next20').attr('id', 'btmnext20').text('Display next 20 results');
-  			$('#bottombuttons').append(btmBtn);
+  			
 
   			$('.next20').on('click', function(){
 
   				event.preventDefault();
 
   				$('#displayrow').empty();
+  				$('#bottombuttons').hide();
+
+  				var showButttons = function(){
+  					$('#bottombuttons').show();
+  				};
+
+  				setTimeout(showButttons, 800);
+
 
 				//zip code value
 				var zipCode = localStorage.getItem("zipCode");
@@ -447,7 +487,7 @@
 						var td= $('<td id = "pic'+[i]+'">');
 
 						//animal name
-						var name = $('<p>' + petArray[i].name.$t + '</p>');	
+						var name = $('<p class="animalname">' + petArray[i].name.$t + '</p>');	
 
 						var breed = "";
 
@@ -460,7 +500,13 @@
 							}
 							
 
-						var sex = $('<p> Sex: ' + petArray[i].sex.$t + '</p>');
+						var sex = petArray[i].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						};
 
 						var age = $('<p> Age: ' + petArray[i].age.$t + '</p>');				
 						 
@@ -480,7 +526,6 @@
 						td.append(animalPicture);
 						td.append(name);
 						td.append(breed);
-						td.append(sex);
 						td.append(age);
 						$('#tr1').append(td);
 											
@@ -494,7 +539,7 @@
 						var td= $('<td id = "pic'+[j]+'">');
 
 						//animal name
-						var name = $('<p>' + petArray[j].name.$t + '</p>');	
+						var name = $('<p class="animalname">' + petArray[j].name.$t + '</p>');	
 
 						var breed = "";
 
@@ -507,7 +552,13 @@
 							}
 							
 
-						var sex = $('<p> Sex: ' + petArray[j].sex.$t + '</p>');
+						var sex = petArray[j].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 						var age = $('<p> Age: ' + petArray[j].age.$t + '</p>');				
 						 
@@ -522,16 +573,10 @@
 							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
 						}
 
-						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-						
-
-
-						//append all info as td
 						//append all info as td
 						td.append(animalPicture);
 						td.append(name);
 						td.append(breed);
-						td.append(sex);
 						td.append(age);
 						$('#tr2').append(td);
 											
@@ -545,7 +590,7 @@
 						var td= $('<td id = "pic'+[k]+'">');
 
 						//animal name
-						var name = $('<p>' + petArray[k].name.$t + '</p>');	
+						var name = $('<p class="animalname">' + petArray[k].name.$t + '</p>');	
 
 						var breed = "";
 
@@ -558,7 +603,13 @@
 							}
 
 
-						var sex = $('<p> Sex: ' + petArray[k].sex.$t + '</p>');
+						var sex = petArray[k].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 						var age = $('<p> Age: ' + petArray[k].age.$t + '</p>');				
 						 
@@ -578,7 +629,6 @@
 						td.append(animalPicture);
 						td.append(name);
 						td.append(breed);
-						td.append(sex);
 						td.append(age);
 						$('#tr3').append(td);
 											
@@ -592,7 +642,7 @@
 						var td= $('<td id = "pic'+[l]+'">');
 
 						//animal name
-						var name = $('<p id = "petname">' + petArray[l].name.$t + '</p>');
+						var name = $('<p class = "animalname">' + petArray[l].name.$t + '</p>');
 
 						var breed = "";
 
@@ -605,7 +655,13 @@
 							}
 					
 
-						var sex = $('<p> Sex: ' + petArray[l].sex.$t + '</p>');
+						var sex = petArray[l].sex.$t;
+
+						if (sex == "M"){
+							name.css("color", '#428BCA');
+						} else {
+							name.css('color', "#ff80ab");
+						}
 
 						var age = $('<p> Age: ' + petArray[l].age.$t + '</p>');		
 						 
@@ -624,7 +680,6 @@
 						td.append(animalPicture);
 						td.append(name);
 						td.append(breed);
-						td.append(sex);
 						td.append(age);
 						$('#tr4').append(td);
 											
@@ -736,6 +791,12 @@
 
 							var newDiv = $('<div>');
 							var newName = $('<p id = "indname">'+response.petfinder.pet.name.$t+'</p>');
+							var sex = response.petfinder.pet.sex.$t;
+							if (sex =="M"){
+								newName.css('color', '#428BCA');
+							} else {
+								newName.css('color', '#ff80ab');
+							}
 							var description = $('<p id = "description">');
 							description.text(response.petfinder.pet.description.$t);
 							newDiv.append(newName);
@@ -753,7 +814,8 @@
 				//closes promise
 				});
 
-
+//-----------------------------------go back button--------------------------------------------------------------------------------------
+//-----------------------------------------------------------gobackbutton---------------------------------------------------------------
 				if (lastoffset === 20){
 
 					var newBtn = $('<btn>').addClass('btn btn-primary last20').attr('id', 'toplast20').text('Display previous 20 results');
@@ -766,6 +828,13 @@
 		  				event.preventDefault();
 
 		  				$('#displayrow').empty();
+		  				$('#bottombuttons').hide();
+
+  						var showButttons = function(){
+  							$('#bottombuttons').show();
+  						};
+
+  						setTimeout(showButttons, 800);
 
 						//zip code value
 						var zipCode = localStorage.getItem("zipCode");
@@ -805,7 +874,7 @@
 								var td= $('<td id = "pic'+[i]+'">');
 
 								//animal name
-								var name = $('<p>' + petArray[i].name.$t + '</p>');	
+								var name = $('<p class="animalname">' + petArray[i].name.$t + '</p>');	
 
 								var breed = "";
 
@@ -818,7 +887,13 @@
 									}
 									
 
-								var sex = $('<p> Sex: ' + petArray[i].sex.$t + '</p>');
+								var sex = petArray[i].sex.$t;
+
+								if (sex == "M"){
+									name.css("color", '#428BCA');
+								} else {
+									name.css('color', "#ff80ab");
+								}
 
 								var age = $('<p> Age: ' + petArray[i].age.$t + '</p>');				
 								 
@@ -838,7 +913,6 @@
 								td.append(animalPicture);
 								td.append(name);
 								td.append(breed);
-								td.append(sex);
 								td.append(age);
 								$('#tr1').append(td);
 													
@@ -852,7 +926,7 @@
 								var td= $('<td id = "pic'+[j]+'">');
 
 								//animal name
-								var name = $('<p>' + petArray[j].name.$t + '</p>');	
+								var name = $('<p class="animalname">' + petArray[j].name.$t + '</p>');	
 
 								var breed = "";
 
@@ -865,7 +939,13 @@
 									}
 									
 
-								var sex = $('<p> Sex: ' + petArray[j].sex.$t + '</p>');
+								var sex = petArray[j].sex.$t;
+
+								if (sex == "M"){
+									name.css("color", '#428BCA');
+								} else {
+									name.css('color', "#ff80ab");
+								}
 
 								var age = $('<p> Age: ' + petArray[j].age.$t + '</p>');				
 								 
@@ -885,7 +965,6 @@
 								td.append(animalPicture);
 								td.append(name);
 								td.append(breed);
-								td.append(sex);
 								td.append(age);
 								$('#tr2').append(td);
 													
@@ -899,7 +978,7 @@
 								var td= $('<td id = "pic'+[k]+'">');
 
 								//animal name
-								var name = $('<p>' + petArray[k].name.$t + '</p>');	
+								var name = $('<p class="animalname">' + petArray[k].name.$t + '</p>');	
 
 								var breed = "";
 
@@ -912,7 +991,13 @@
 									}
 
 
-								var sex = $('<p> Sex: ' + petArray[k].sex.$t + '</p>');
+								var sex = petArray[k].sex.$t;
+
+								if (sex == "M"){
+									name.css("color", '#428BCA');
+								} else {
+									name.css('color', "#ff80ab");
+								}
 
 								var age = $('<p> Age: ' + petArray[k].age.$t + '</p>');				
 								 
@@ -932,7 +1017,6 @@
 								td.append(animalPicture);
 								td.append(name);
 								td.append(breed);
-								td.append(sex);
 								td.append(age);
 								$('#tr3').append(td);
 													
@@ -946,7 +1030,7 @@
 								var td= $('<td id = "pic'+[l]+'">');
 
 								//animal name
-								var name = $('<p id = "petname">' + petArray[l].name.$t + '</p>');
+								var name = $('<p class="animalname">' + petArray[l].name.$t + '</p>');
 
 								var breed = "";
 
@@ -959,7 +1043,13 @@
 									}
 							
 
-								var sex = $('<p> Sex: ' + petArray[l].sex.$t + '</p>');
+								var sex = petArray[l].sex.$t;
+
+								if (sex == "M"){
+									name.css("color", '#428BCA');
+								} else {
+									name.css('color', "#ff80ab");
+								};
 
 								var age = $('<p> Age: ' + petArray[l].age.$t + '</p>');		
 								 
@@ -979,7 +1069,6 @@
 								td.append(animalPicture);
 								td.append(name);
 								td.append(breed);
-								td.append(sex);
 								td.append(age);
 								$('#tr4').append(td);
 													
@@ -1090,7 +1179,13 @@
 									}
 
 									var newDiv = $('<div>');
-									var newName = $('<p id="indname">'+response.petfinder.pet.name.$t+'</p>')
+									var newName = $('<p id="indname">'+response.petfinder.pet.name.$t+'</p>');
+									var sex = response.petfinder.pet.sex.$t;
+									if (sex =="M"){
+										newName.css('color', '#428BCA');
+									} else {
+										newName.css('color', '#ff80ab');
+									}
 									var description = $('<p id = "description">');
 									description.text(response.petfinder.pet.description.$t);
 									newDiv.append(newName);
@@ -1120,6 +1215,8 @@
 			//closesdisplay next 10 results
   			})
 
+		var btmBtn = $('<btn>').addClass('btn btn-primary next20').attr('id', 'btmnext20').text('Display next 20 results');
+  			$('#bottombuttons').append(btmBtn);
 
 		//closing tags for search button click event
 		});

@@ -20,21 +20,18 @@ button:hover {
 
 table {
 	margin-left: 40px;
+	margin-top: 40px;
 	display: flex;
 	justify-content: space-around;
 }
 
-.animalpic {
+.animalpic .nopic{
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
 
 .animalpic:hover {
 	cursor: pointer;
-}
-
-td {
-	padding-left: 10px;
 }
 
 
@@ -112,4 +109,15 @@ input {
 	font-weight: bold;
 	margin-top: 20px;
 	color: #428BCA;
+}
+
+td {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	padding-left: 15px;
+}
+
+.animalname {
+	font-size: 22px;
+	padding-bottom: 5px;
 }
