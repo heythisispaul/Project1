@@ -31,7 +31,7 @@
 			//zip code value
 			var zipCode = $('#zipCode').val().trim();
 			console.log(zipCode);
-			localStorage.setItem("zipCode", zipCode)
+			localStorage.setItem("zipCode", zipCode);
 			//animal type value
 			var typeAnimal = $('#animaltype').val().trim();
 			console.log(typeAnimal);
@@ -97,15 +97,13 @@
 
 					if(petArray[i].media.photos == null){
 						pic = "../assets/images/noimage.jpg";
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "nopic");
 					} else {
 						pic = petArray[i].media.photos.photo[1].$t;
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
 					}
 
-					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
 
-
-					//append all info as td
 					//append all info as td
 					td.append(animalPicture);
 					td.append(name);
@@ -146,15 +144,15 @@
 
 					if(petArray[i].media.photos == null){
 						pic = "../assets/images/noimage.jpg";
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "nopic");
+
 					} else {
 						pic = petArray[j].media.photos.photo[1].$t;
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
+
 					}
 
-					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
-
-
-					//append all info as td
+					
 					//append all info as td
 					td.append(animalPicture);
 					td.append(name);
@@ -195,15 +193,13 @@
 
 					if(petArray[i].media.photos == null){
 						pic = "../assets/images/noimage.jpg";
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "nopic");
 					} else {
 						pic = petArray[k].media.photos.photo[1].$t;
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
 					}
 
-					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
-
-
-					//append all info as td
+			
 					//append all info as td
 					td.append(animalPicture);
 					td.append(name);
@@ -244,12 +240,11 @@
 
 					if(petArray[i].media.photos == null){
 						pic = "../assets/images/noimage.jpg";
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "nopic");
 					} else {
 						pic = petArray[l].media.photos.photo[1].$t;
+						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
 					}
-
-					//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-					var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
 
 
 					//append all info as td
@@ -271,7 +266,7 @@
 				$('#breed').val("");
 
 				//when user clicks on animal image
-				$('img').on('click', function(){
+				$('.animalpic').on('click', function(){
 
 					$('.next20').hide();
 					$('#displaytext').hide();
@@ -474,12 +469,11 @@
 
 						if(petArray[i].media.photos == null){
 							pic = "../assets/images/noimage.jpg";
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "nopic");
 						} else {
 							pic = petArray[i].media.photos.photo[1].$t;
-						}
-
-						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
+						}	
 
 
 						//append all info as td
@@ -520,14 +514,16 @@
 						//picture of animal						
 						var pic = "";
 
-						if(petArray[i].media.photos == null){
+						if(petArray[j].media.photos == null){
 							pic = "../assets/images/noimage.jpg";
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "nopic");
 						} else {
 							pic = petArray[j].media.photos.photo[1].$t;
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
 						}
 
 						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
+						
 
 
 						//append all info as td
@@ -569,17 +565,15 @@
 						//picture of animal
 						var pic = "";
 
-						if(petArray[i].media.photos == null){
+						if(petArray[k].media.photos == null){
 							pic = "../assets/images/noimage.jpg";
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "nopic");
 						} else {
 							pic = petArray[k].media.photos.photo[1].$t;
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
 						}
 
-						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
 
-
-						//append all info as td
 						//append all info as td
 						td.append(animalPicture);
 						td.append(name);
@@ -618,15 +612,13 @@
 						//picture of animal
 						var pic = "";
 
-						if(petArray[i].media.photos == null){
+						if(petArray[l].media.photos == null){
 							pic = "../assets/images/noimage.jpg";
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "nopic");
 						} else {
 							pic = petArray[l].media.photos.photo[1].$t;
+							var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
 						}
-
-						//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-						var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
-
 
 						//append all info as td
 						td.append(animalPicture);
@@ -641,7 +633,7 @@
 
 
 					//when user clicks on animal image
-					$('img').on('click', function(){
+					$('.animalpic').on('click', function(){
 
 						//create new button to go back
 						var newBtn = $('<button>').attr('id', 'backbtn').text("Go Back").addClass('btn btn-primary');
@@ -835,14 +827,13 @@
 
 								if(petArray[i].media.photos == null){
 									pic = "../assets/images/noimage.jpg";
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "nopic");
 								} else {
 									pic = petArray[i].media.photos.photo[1].$t;
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
 								}
 
-								//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-								var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[i].id.$t).attr('class', "animalpic");
-
-
+				
 								//append all info as td
 								td.append(animalPicture);
 								td.append(name);
@@ -881,17 +872,15 @@
 								//picture of animal						
 								var pic = "";
 
-								if(petArray[i].media.photos == null){
+								if(petArray[j].media.photos == null){
 									pic = "../assets/images/noimage.jpg";
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "nopic");
 								} else {
 									pic = petArray[j].media.photos.photo[1].$t;
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
 								}
 
-								//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-								var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[j].id.$t).attr('class', "animalpic");
-
-
-								//append all info as td
+								
 								//append all info as td
 								td.append(animalPicture);
 								td.append(name);
@@ -930,17 +919,15 @@
 								//picture of animal
 								var pic = "";
 
-								if(petArray[i].media.photos == null){
+								if(petArray[k].media.photos == null){
 									pic = "../assets/images/noimage.jpg";
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "nopic");
 								} else {
 									pic = petArray[k].media.photos.photo[1].$t;
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
 								}
 
-								//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-								var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[k].id.$t).attr('class', "animalpic");
-
-
-								//append all info as td
+					
 								//append all info as td
 								td.append(animalPicture);
 								td.append(name);
@@ -979,14 +966,13 @@
 								//picture of animal
 								var pic = "";
 
-								if(petArray[i].media.photos == null){
+								if(petArray[l].media.photos == null){
 									pic = "../assets/images/noimage.jpg";
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "nopic");
 								} else {
 									pic = petArray[l].media.photos.photo[1].$t;
+									var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
 								}
-
-								//create new image with src = pic, and assigned attributes of animalid(unique identifier), and animalpic class
-								var animalPicture = $('<img>').attr('src', pic).attr('animalId', petArray[l].id.$t).attr('class', "animalpic");
 
 
 								//append all info as td
@@ -1002,7 +988,7 @@
 
 
 							//when user clicks on animal image
-							$('img').on('click', function(){
+							$('.animalpic').on('click', function(){
 
 								//create new button to go back
 								var newBtn = $('<button>').attr('id', 'backbtn').text("Go Back").addClass('btn btn-primary');
@@ -1137,3 +1123,4 @@
 
 		//closing tags for search button click event
 		});
+
