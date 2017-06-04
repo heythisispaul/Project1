@@ -40,11 +40,11 @@
 			console.log(zipCode);
 			localStorage.setItem("zipCode", zipCode);
 			//animal type value
-			var typeAnimal = $('#animaltype').val().trim();
+			var typeAnimal = $('#animaltype').val().trim().toLowerCase();
 			console.log(typeAnimal);
 			localStorage.setItem("typeAnimal", typeAnimal);
 			//breed value
-			var breed = $('#breed').val().trim();
+			var breed = $('#breed').val().trim().toLowerCase();
 			console.log(breed);
 			localStorage.setItem("breed", breed);
 			//offset=count to return next 10 results
