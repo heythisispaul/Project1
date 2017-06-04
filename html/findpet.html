@@ -13,23 +13,27 @@
 	</div>
 	<div class = "row">
 		<div class = "form">
-			<div class = 'col-md-4 col-md-offset-2'>
-				<div class = "form-body" id ="formbody">
-					<label for = "zipCode">ZIP Code:</label>
-					<input type="text" name="zipCode" maxlength="5" style = 'width: 100px; text-align: center' id = 'zipCode' placeholder="5 digits">
-					<label for = "animaltype"> Type of Animal:</label>
-					<input type="text" name="animaltype" id = "animaltype" style = 'width: 150px; text-align: center' placeholder="dog, cat, horse">
-					<button class = "btn btn-primary" id = "searchButton" disabled="disabled">SEARCH</button>
-				</div>
-				<p id ="displaytext">Click on an image to display more pictures</p>
+			<div class = "form-body" id ="formbody">
+				<label for = "zipCode">ZIP Code: (required)</label>
+				<input type="text" name="zipCode" maxlength="5" style = 'width: 100px; text-align: center' id = 'zipCode' placeholder="5 digits">
+				<label for = "animaltype"> Type of Animal: (required)</label>
+				<input type="text" name="animaltype" id = "animaltype" style = 'width: 150px; text-align: center' placeholder="dog, cat, horse">
+				<label for="breed">Breed:</label>
+				<input type="text" name="breed" id = "breed" style = 'width: 200px; text-align: center' placeholder = "labrador, tabby, arabian">
+				<button class = "btn btn-primary" id = "searchButton" disabled="disabled">SEARCH</button>
 			</div>
+
+				<p id ="displaytext">Click on an image to find out more about your next pet!</p>
 		</div>
 	</div>
-	<div class = "jumbotron" id = "initialdisplay">
-		
-		
+	<div class = "container container-flex" id = "initialdisplay">
+		<div class = "row" id = "buttondisplay"></div>
+		<div class = "row" id = "displayrow"></div>
+		<div class = "row" id ="bottombuttons"></div>
 	</div>
+
 	<div class = "jumbotron" id = "picturedisplay">
+		<div class="row" id = "indbuttondisplay"></div>
 		<div class = "row" id = 'showanimal'>
 		</div>
 	</div>
