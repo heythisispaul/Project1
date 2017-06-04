@@ -274,6 +274,7 @@
 				$('img').on('click', function(){
 
 					$('.next20').hide();
+					$('#displaytext').hide();
 
 
 					//create new button to go back
@@ -372,6 +373,7 @@
 								$('#displaytext').show();
 								$('#backbtn').remove();
 								$('.next20').show();
+								$('#displaytext').show();
 
 							//closes back button click event	
 							})	
@@ -651,6 +653,7 @@
 						$('#picturedisplay').show();
 						$('.next20').hide();
 						$('.last20').hide();
+						$('#displaytext').hide();
 
 						//retrieve the animal id assigned to the picture for use in ajax request
 						var thisAnimal = $(this).attr('animalId');
@@ -731,6 +734,7 @@
 									$('#backbtn').remove();
 									$('.next20').show();
 									$('.last20').show();
+									$('#displaytext').show();
 
 								//closes back button click event	
 								})	
@@ -1010,6 +1014,7 @@
 								$('#picturedisplay').show();
 								$('.next20').hide();
 								$('.last20').hide();
+								$('#displaytext').hide();
 
 								//retrieve the animal id assigned to the picture for use in ajax request
 								var thisAnimal = $(this).attr('animalId');
@@ -1090,6 +1095,7 @@
 											$('#backbtn').remove();
 											$('.next20').show();
 											$('.last20').show();
+											$('#displaytext').show();
 
 										//closes back button click event	
 										})	
