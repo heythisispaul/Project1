@@ -1,11 +1,13 @@
 #btmlast20 {
 	position: relative;
 	top: 50px;
+	margin-bottom: 100px;
 }
 
 #btmnext20 {
 	position: relative;
 	top: 50px;
+	margin-bottom: 100px;
 }
 
 button:hover {
