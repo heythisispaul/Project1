@@ -433,6 +433,8 @@
 
   			var newBtn = $('<btn>').addClass('btn btn-primary next20').attr('id', 'topnext20').text('Display next 20 results');
   			$('#buttondisplay').append(newBtn);
+  			var btmBtn = $('<btn>').addClass('btn btn-primary next20').attr('id', 'btmnext20').text('Display next 20 results');
+  			$('#bottombuttons').append(btmBtn);
   			
 
   			$('.next20').on('click', function(){
@@ -1215,8 +1217,7 @@
 			//closesdisplay next 10 results
   			})
 
-		var btmBtn = $('<btn>').addClass('btn btn-primary next20').attr('id', 'btmnext20').text('Display next 20 results');
-  			$('#bottombuttons').append(btmBtn);
+
 
 		//closing tags for search button click event
 		});

@@ -121,3 +121,7 @@ td {
 	font-size: 22px;
 	padding-bottom: 5px;
 }
+
+.next20:hover, .last20:hover {
+	cursor: pointer;
+}
