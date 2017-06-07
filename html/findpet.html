@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css">	
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/findpet.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4" async defer></script>
 </head>
 <body>
 	<div class = "row">
@@ -20,7 +21,7 @@
 				<input type="text" name="animaltype" id = "animaltype" style = 'width: 150px; text-align: center' placeholder="dog, cat, horse">
 				<label for="breed">Breed:</label>
 				<input type="text" name="breed" id = "breed" style = 'width: 200px; text-align: center' placeholder = "labrador, tabby, arabian">
-				<button class = "btn btn-primary" id = "searchButton" disabled="disabled">SEARCH</button>
+				<button class = "btn btn-primary" id = "searchButton">SEARCH</button>
 			</div>
 
 				<p id ="displaytext">Click on an image to find out more about your next pet!</p>
@@ -38,48 +39,14 @@
 		</div>
 	</div>
 
-	<!-- TESTING -->
-	<div id="map">
-		Test
-	</div>
 	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 
-<script type="text/javascript" src = "../assets/javascript/app.js">
+<script type="text/javascript" src = "../assets/javascript/testapp.js">
 </script>
 
 
-<!-- TESTING -->
-    <script>
-    
-      function initMap() {
-        
-        var position = {lat: -34.397, lng: 150.644};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: position,
-          zoom: 8
-        });
-
-        var marker = new google.maps.Marker({
-          position: position,
-          map: map
-        });
-      
-        var marker2 = new google.maps.Marker({
-          position: {lat: -34.357, lng: 150.544},
-          map: map
-        });
-
-      }
-    </script>
-    
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4&callback=initMap" async defer>
-</script>
-
-
-	
 </body>
 </html>

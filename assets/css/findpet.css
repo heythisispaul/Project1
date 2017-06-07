@@ -99,7 +99,7 @@ input {
 }
 
 .contactinfo {
-	font-size: 20px;
+	font-size: 20px;+2
 	font-weight: bold;
 	margin-top: 10px;
 }
@@ -122,9 +122,8 @@ td {
 	padding-bottom: 5px;
 }
 
-/*TESTING*/
 #map {
 	display: block;
-	height: 400px;
-	width: 600px;
+	height: 500px;
+	width: 500px;
 }
