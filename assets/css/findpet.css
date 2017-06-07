@@ -62,10 +62,12 @@ label {
 	font-size: 20px;
 	color: #428BCA;
 	padding-left: 20px;
+	margin-left: 10px;
 }
 
 input {
 	padding-right: 50px;
+	margin-left: 20px;
 }
 
 #searchButton{
@@ -93,17 +95,20 @@ input {
 	display: inline-flex;
 	text-align: center;
 	margin-right: 20px;
+	margin-left: 60px;
 }
 
 #description {
 	font-size: 16px;
 	margin-top: 30px;
+	margin-left: 60px;
 }
 
 .contactinfo {
 	font-size: 20px;
 	font-weight: bold;
 	margin-top: 10px;
+	margin-left: 60px;
 }
 
 #indname {
@@ -111,6 +116,7 @@ input {
 	font-weight: bold;
 	margin-top: 20px;
 	color: #428BCA;
+	margin-left: 60px;
 }
 
 td {
@@ -119,11 +125,19 @@ td {
 	padding-left: 15px;
 }
 
+td p{
+	margin: 0, 0;
+}
+
 .animalname {
-	font-size: 22px;
-	padding-bottom: 5px;
+	font-size: 24px;
+	font-weight: bolder;
 }
 
 .next20:hover, .last20:hover {
 	cursor: pointer;
+}
+
+.jumbotron {
+	background-color: white;
 }

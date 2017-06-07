@@ -89,9 +89,9 @@
 						if($.isArray(petArray[i].breeds.breed)){
 							var firstBreed = petArray[i].breeds.breed[0].$t;
 							var secondBreed = petArray[i].breeds.breed[1].$t;
-							breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+							breed = $("<p><strong>Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 						} else{
-							breed = $('<p> Breed: ' + petArray[i].breeds.breed.$t + '</p>');
+							breed = $('<p><strong> Breed: </strong>' + petArray[i].breeds.breed.$t + '</p>');
 						}
 		
 
@@ -103,7 +103,7 @@
 							name.css('color', "#ff80ab");
 						}
 
-					var age = $('<p> Age: ' + petArray[i].age.$t + '</p>');				
+					var age = $('<p><strong> Age: </strong>' + petArray[i].age.$t + '</p>');				
 					 
 					//picture of animal
 					var pic = "";
@@ -141,9 +141,9 @@
 						if($.isArray(petArray[j].breeds.breed)){
 							var firstBreed = petArray[j].breeds.breed[0].$t;
 							var secondBreed = petArray[j].breeds.breed[1].$t;
-							breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+							breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 						} else{
-							breed = $('<p> Breed: ' + petArray[j].breeds.breed.$t + '</p>');
+							breed = $('<p><em> Breed: </strong>' + petArray[j].breeds.breed.$t + '</p>');
 						}
 				
 
@@ -155,7 +155,7 @@
 							name.css('color', "#ff80ab");
 						}
 
-					var age = $('<p> Age: ' + petArray[j].age.$t + '</p>');				
+					var age = $('<p><strong> Age: </strong>' + petArray[j].age.$t + '</p>');				
 					 
 					//picture of animal
 					var pic = "";
@@ -195,9 +195,9 @@
 						if($.isArray(petArray[k].breeds.breed)){
 							var firstBreed = petArray[k].breeds.breed[0].$t;
 							var secondBreed = petArray[k].breeds.breed[1].$t;
-							breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+							breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 						} else{
-							breed = $('<p> Breed: ' + petArray[k].breeds.breed.$t + '</p>');
+							breed = $('<p><strong> Breed: </strong>' + petArray[k].breeds.breed.$t + '</p>');
 						}
 					
 
@@ -209,7 +209,7 @@
 							name.css('color', "#ff80ab");
 						}
 
-					var age = $('<p> Age: ' + petArray[k].age.$t + '</p>');				
+					var age = $('<p><strong> Age: </strong>' + petArray[k].age.$t + '</p>');				
 					 
 					//picture of animal
 					var pic = "";
@@ -247,9 +247,9 @@
 						if($.isArray(petArray[l].breeds.breed)){
 							var firstBreed = petArray[l].breeds.breed[0].$t;
 							var secondBreed = petArray[l].breeds.breed[1].$t;
-							breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+							breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 						} else{
-							breed = $('<p> Breed: ' + petArray[l].breeds.breed.$t + '</p>');
+							breed = $('<p><strong> Breed: </strong>' + petArray[l].breeds.breed.$t + '</p>');
 						}
 					
 
@@ -261,7 +261,7 @@
 							name.css('color', "#ff80ab");
 						}
 
-					var age = $('<p> Age: ' + petArray[l].age.$t + '</p>');		
+					var age = $('<p><strong> Age: </strong>' + petArray[l].age.$t + '</p>');		
 					 
 					//picture of animal
 					var pic = "";
@@ -496,9 +496,9 @@
 							if($.isArray(petArray[i].breeds.breed)){
 								var firstBreed = petArray[i].breeds.breed[0].$t;
 								var secondBreed = petArray[i].breeds.breed[1].$t;
-								breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+								breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 							} else{
-								breed = $('<p> Breed: ' + petArray[i].breeds.breed.$t + '</p>');
+								breed = $('<p><strong> Breed: </strong>' + petArray[i].breeds.breed.$t + '</p>');
 							}
 							
 
@@ -510,7 +510,7 @@
 							name.css('color', "#ff80ab");
 						};
 
-						var age = $('<p> Age: ' + petArray[i].age.$t + '</p>');				
+						var age = $('<p><strong> Age: </strong>' + petArray[i].age.$t + '</p>');				
 						 
 						//picture of animal
 						var pic = "";
@@ -548,9 +548,9 @@
 							if($.isArray(petArray[j].breeds.breed)){
 								var firstBreed = petArray[j].breeds.breed[0].$t;
 								var secondBreed = petArray[j].breeds.breed[1].$t;
-								breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+								breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 							} else{
-								breed = $('<p> Breed: ' + petArray[j].breeds.breed.$t + '</p>');
+								breed = $('<p><strong> Breed: </strong>' + petArray[j].breeds.breed.$t + '</p>');
 							}
 							
 
@@ -562,7 +562,7 @@
 							name.css('color', "#ff80ab");
 						}
 
-						var age = $('<p> Age: ' + petArray[j].age.$t + '</p>');				
+						var age = $('<p><strong> Age: </strong>' + petArray[j].age.$t + '</p>');				
 						 
 						//picture of animal						
 						var pic = "";
@@ -599,9 +599,9 @@
 							if($.isArray(petArray[k].breeds.breed)){
 								var firstBreed = petArray[k].breeds.breed[0].$t;
 								var secondBreed = petArray[k].breeds.breed[1].$t;
-								breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+								breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 							} else{
-								breed = $('<p> Breed: ' + petArray[k].breeds.breed.$t + '</p>');
+								breed = $('<p><strong> Breed: </strong>' + petArray[k].breeds.breed.$t + '</p>');
 							}
 
 
@@ -613,7 +613,7 @@
 							name.css('color', "#ff80ab");
 						}
 
-						var age = $('<p> Age: ' + petArray[k].age.$t + '</p>');				
+						var age = $('<p><strong> Age: </strong>' + petArray[k].age.$t + '</p>');				
 						 
 						//picture of animal
 						var pic = "";
@@ -651,9 +651,9 @@
 							if($.isArray(petArray[l].breeds.breed)){
 								var firstBreed = petArray[l].breeds.breed[0].$t;
 								var secondBreed = petArray[l].breeds.breed[1].$t;
-								breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+								breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 							} else{
-								breed = $('<p> Breed: ' + petArray[l].breeds.breed.$t + '</p>');
+								breed = $('<p><strong> Breed: </strong>' + petArray[l].breeds.breed.$t + '</p>');
 							}
 					
 
@@ -883,9 +883,9 @@
 									if($.isArray(petArray[i].breeds.breed)){
 										var firstBreed = petArray[i].breeds.breed[0].$t;
 										var secondBreed = petArray[i].breeds.breed[1].$t;
-										breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+										breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 									} else{
-										breed = $('<p> Breed: ' + petArray[i].breeds.breed.$t + '</p>');
+										breed = $('<p><strong> Breed: </strong>' + petArray[i].breeds.breed.$t + '</p>');
 									}
 									
 
@@ -897,7 +897,7 @@
 									name.css('color', "#ff80ab");
 								}
 
-								var age = $('<p> Age: ' + petArray[i].age.$t + '</p>');				
+								var age = $('<p><strong> Age: </strong>' + petArray[i].age.$t + '</p>');				
 								 
 								//picture of animal
 								var pic = "";
@@ -935,9 +935,9 @@
 									if($.isArray(petArray[j].breeds.breed)){
 										var firstBreed = petArray[j].breeds.breed[0].$t;
 										var secondBreed = petArray[j].breeds.breed[1].$t;
-										breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+										breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 									} else{
-										breed = $('<p> Breed: ' + petArray[j].breeds.breed.$t + '</p>');
+										breed = $('<p><strong> Breed: </strong>' + petArray[j].breeds.breed.$t + '</p>');
 									}
 									
 
@@ -949,7 +949,7 @@
 									name.css('color', "#ff80ab");
 								}
 
-								var age = $('<p> Age: ' + petArray[j].age.$t + '</p>');				
+								var age = $('<p><strong> Age: </strong>' + petArray[j].age.$t + '</p>');				
 								 
 								//picture of animal						
 								var pic = "";
@@ -987,7 +987,7 @@
 									if($.isArray(petArray[k].breeds.breed)){
 										var firstBreed = petArray[k].breeds.breed[0].$t;
 										var secondBreed = petArray[k].breeds.breed[1].$t;
-										breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+										breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 									} else{
 										breed = $('<p> Breed: ' + petArray[k].breeds.breed.$t + '</p>');
 									}
@@ -1001,7 +1001,7 @@
 									name.css('color', "#ff80ab");
 								}
 
-								var age = $('<p> Age: ' + petArray[k].age.$t + '</p>');				
+								var age = $('<p><strong> Age: </strong>' + petArray[k].age.$t + '</p>');				
 								 
 								//picture of animal
 								var pic = "";
@@ -1039,9 +1039,9 @@
 									if($.isArray(petArray[l].breeds.breed)){
 										var firstBreed = petArray[l].breeds.breed[0].$t;
 										var secondBreed = petArray[l].breeds.breed[1].$t;
-										breed = $("<p> Breeds: " + firstBreed + ", " + secondBreed + "</p>");							
+										breed = $("<p><strong> Breeds: </strong>" + firstBreed + ", " + secondBreed + "</p>");							
 									} else{
-										breed = $('<p> Breed: ' + petArray[l].breeds.breed.$t + '</p>');
+										breed = $('<p><strong> Breed: </strong>' + petArray[l].breeds.breed.$t + '</p>');
 									}
 							
 
@@ -1053,7 +1053,7 @@
 									name.css('color', "#ff80ab");
 								};
 
-								var age = $('<p> Age: ' + petArray[l].age.$t + '</p>');		
+								var age = $('<p><strong> Age: </strong>' + petArray[l].age.$t + '</p>');		
 								 
 								//picture of animal
 								var pic = "";
