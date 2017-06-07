@@ -121,3 +121,10 @@ td {
 	font-size: 22px;
 	padding-bottom: 5px;
 }
+
+/*TESTING*/
+#map {
+	display: block;
+	height: 400px;
+	width: 600px;
+}

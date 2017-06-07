@@ -37,14 +37,46 @@
 		<div class = "row" id = 'showanimal'>
 		</div>
 	</div>
+
+	<!-- TESTING -->
+	<div id="map">
+		Test
+	</div>
 	
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+
 <script type="text/javascript" src = "../assets/javascript/app.js">
+</script>
 
 
+<!-- TESTING -->
+    <script>
+    
+      function initMap() {
+        
+        var position = {lat: -34.397, lng: 150.644};
 
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: position,
+          zoom: 8
+        });
 
+        var marker = new google.maps.Marker({
+          position: position,
+          map: map
+        });
+      
+        var marker2 = new google.maps.Marker({
+          position: {lat: -34.357, lng: 150.544},
+          map: map
+        });
+
+      }
+    </script>
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4&callback=initMap" async defer>
 </script>
 
 

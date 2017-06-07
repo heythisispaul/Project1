@@ -1,7 +1,9 @@
+	
+
 	//hides the picture display on doc ready
 	$(document).ready(function(){
 		$('#picturedisplay').hide();
-	})
+	});
 
 	//checks to see if the form inputs are filled, if so the search button is enabled by removing disabled attribute	
 	var inputCheck = function() {
@@ -345,8 +347,11 @@
 							localStorage.setItem("Latitude", latitude);
 							localStorage.setItem("Longitude", longitude);
 
-//-----------------------------insert google maps api here ----------------------------------------------------------------------	
+							// Create div for google map
+							var mapDiv = $('<div id="map">');
+							$('#showanimal').append(mapDiv);
 
+							
 							var newDiv = $('<div class="contactinfo">');
 							var shelterName = response.petfinder.shelter.name.$t;
 							var shelterPhone = response.petfinder.shelter.phone.$t;
@@ -364,6 +369,33 @@
 
 
 						});
+//----------------------------- Start Google Map API Call ---------------------------------------
+							
+
+							// $.getJSON({
+							// 	url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4&callback=initMap",
+							// 	type: "GET"
+							// }).done(function(response){
+							// 	var initMap = function() {
+
+							// 		var position = {lat: latitude, lng: longitude};
+
+							//         var map = new google.maps.Map(document.getElementById('map'), {
+							//           center: position,
+							//           zoom: 8
+							//         });
+
+							//         var marker = new google.maps.Marker({
+							//           position: position,
+							//           map: map
+							//         });
+
+							// 	}
+
+							// 	initMap();
+							// });
+
+//----------------------------- End Google Map API Call ---------------------------------------
 
 						
 
