@@ -79,20 +79,7 @@ var createSearchButtons = function() {
 	});
 }
 
-var search = function(num, offset) {
-	var clearDisplay = function() {
-		//clear the division of previous info
-		$('#displayrow').empty();
-		// $('#bottombuttons').hide();
-	};
-
-	var clearSearchValues = function() {
-		$('#zipCode').val("");
-		$('#animaltype').val("");
-		$('#breed').val("");
-	};
-
-	var showTopButtons = function() {
+var showTopButtons = function() {
 		
 		// *** TESTING ***
 		console.log("showTopButtons called");
@@ -103,16 +90,30 @@ var search = function(num, offset) {
 		}
 	};
 
-	var showBottomButtons = function() {
-		
-		// *** TESTING ***
-		console.log("showBottomButtons called");
+var showBottomButtons = function() {
+	
+	// *** TESTING ***
+	console.log("showBottomButtons called");
 
-		$("#btmnext20").show();
-		if (lastoffset > 0) {
-			$("#btmlast20").show();
-		}
+	$("#btmnext20").show();
+	if (lastoffset > 0) {
+		$("#btmlast20").show();
+	}
 
+};
+
+var search = function(num, offset) {
+	var clearDisplay = function() {
+		//clear the division of previous info
+		$('#displayrow').empty();
+		$('.next20').hide();
+		$('.last20').hide();
+	};
+
+	var clearSearchValues = function() {
+		$('#zipCode').val("");
+		$('#animaltype').val("");
+		$('#breed').val("");
 	};
 
 	clearDisplay();
@@ -261,7 +262,10 @@ var animalDetails = function(object) {
 		$('#initialdisplay').show();
 		$('#displaytext').show();
 		$('#backbtn').remove();
-		$('.next20').show();
+		$('.next20').hide();
+		$('.last20').hide();
+		showTopButtons();
+		setTimeout(showBottomButtons, 800);
 		$('#displaytext').show();
 	});
 	$('#indbuttondisplay').append(newBtn);
@@ -338,8 +342,8 @@ var displayAnimalPhotos = function(array, response) {
 
 var initMap = function(lat, lng) {
 	$("#showanimal").append("<div id=\"map\"></div>");
-	latitude = parseInt(lat);
-	longitude = parseInt(lng);
+	latitude = parseFloat(lat);
+	longitude = parseFloat(lng);
 
 	// *** TESTING ***
 	console.log("lat: ", latitude, "long: ", longitude);
