@@ -312,6 +312,8 @@ var animalDetails = function(object) {
 };
 
 var displayAnimalPhotos = function(array, response) {
+
+
 	for (var i = 0; i < array.length; i++) {
 				
 		//var of sources for pictures

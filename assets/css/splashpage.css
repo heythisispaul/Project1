@@ -1,0 +1,19 @@
+.navbar {
+	height: 50px;
+	background-color: #428BCA;
+}
+.navbar-brand{
+	position: relative;
+	left: 80px;
+	top: 5px;
+	font-size: 40px;
+}
+
+.navbar li{
+	float: right;
+	display: inline;
+	position: relative;
+	top: -20px;
+	right: 100px;
+	padding-right: 40px;
+}
