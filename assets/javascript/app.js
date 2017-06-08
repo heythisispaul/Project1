@@ -79,27 +79,8 @@ var createSearchButtons = function() {
 	});
 }
 
-var showTopButtons = function() {
-		
-		// *** TESTING ***
-		console.log("showTopButtons called");
-
-		$("#topnext20").show();
-		if (lastoffset > 0) {
-			$("#toplast20").show();
-		}
-	};
-
-var showBottomButtons = function() {
-	
-	// *** TESTING ***
-	console.log("showBottomButtons called");
-
-	$("#btmnext20").show();
-	if (lastoffset > 0) {
-		$("#btmlast20").show();
-	}
-
+var sanitize = function(string) {
+    return $($.parseHTML(string)).text();
 };
 
 var search = function(num, offset) {
@@ -173,17 +154,25 @@ var search = function(num, offset) {
 		// *** TESTING ***
 		console.log(response);
 
-		//list of pets from response object
-		var petArray = response.petfinder.pets.pet;
-		createPetTable(petArray);
-		// showTopButtons();
-		clearSearchValues();
-		// Create event listener for animal images
-		$('.animalpic').on('click', animalDetails)
-	});
+		if (response.petfinder.header.status.message.$t === "invalid arguments") {
+			searchButton= false;
+			lastoffset = 0;
+			currentOffset = 0;
+			$("#displayrow").html("<h3 id=\"errorResponse\">The search returned no results</h3>");
+		} else {
+			//list of pets from response object
+			var petArray = response.petfinder.pets.pet;
+			createPetTable(petArray);
+			// Create event listener for animal images
+			$('.animalpic').on('click', animalDetails);
+			lastoffset = currentOffset;
+			currentOffset += count;
+			showTopButtons();
+			setTimeout(showBottomButtons, 800);
+		}
 
-	lastoffset = currentOffset;
-	currentOffset += count;
+		clearSearchValues();
+	});
 
 	// *** TESTING ***
 	console.log("post-query count: ", count);
@@ -191,8 +180,8 @@ var search = function(num, offset) {
 	console.log("post-query currentOffset: ", currentOffset);
 
 
-	showTopButtons();
-	setTimeout(showBottomButtons, 800);
+	// showTopButtons();
+	// setTimeout(showBottomButtons, 800);
 };
 
 var createPetTable = function(array) {
@@ -245,6 +234,28 @@ var createPetTable = function(array) {
 	}
 	$("#displayrow").append(table);
 
+};
+
+var showTopButtons = function() {
+		
+		// *** TESTING ***
+		console.log("showTopButtons called");
+
+		$("#topnext20").show();
+		if (lastoffset > 0) {
+			$("#toplast20").show();
+		}
+};
+
+var showBottomButtons = function() {
+	
+	// *** TESTING ***
+	console.log("showBottomButtons called");
+
+	$("#btmnext20").show();
+	if (lastoffset > 0) {
+		$("#btmlast20").show();
+	}
 };
 
 var animalDetails = function(object) {
@@ -423,16 +434,15 @@ $("#searchButton").on('click', function(event) {
 		}
 	};
 
-	// *** NEED TO ESCAPE CODE INJECTION
-	var zipCode = $("#zipCode").val().trim();
-	var typeAnimal = $('#animaltype').val().trim();
-	// *********************************
+	var zipCode = sanitize($("#zipCode").val().trim());
+	var typeAnimal = sanitize($('#animaltype').val().trim());
+	var newAnimal = sanitize($($.parseHTML(typeAnimal)).text());
 
 	var inputValid = inputCheck(zipCode, typeAnimal);
 	if (inputValid !== true) {
 		return;
 	}
+
 	searchButton = true;
 	search(count, 0);
-
 });
