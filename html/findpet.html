@@ -4,34 +4,45 @@
 <head>
 	<title>Find a Pet</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css">	
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+	<!--Bootstrap core css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<!--MDB css-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.1/css/mdb.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/findpet.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/splashpage.css">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4" async defer></script>
 </head>
 <body>
 
-<!-- Nav Bar-->
-	<nav class="navbar navbar-nav navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand" href="#">
-				<strong>Pet Pages</strong>
-			</a>
-			<div class="collapse navbar-collapse" id="navbarNav1">
-				<ul class= "navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="findpet.html">Find a Friend</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Foster Page</a>
-					</li>
-					<li class="nav-item">
-						<a class= "nav-link" href="splashpage.html">Home</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+ <!--Navbar-->
+    <nav class="navbar navbar-toggleable-md navbar-light fixed-top scrolling-navbar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <strong>Pet Connect</strong>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Foster</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link">Find</a>
+                    </li>
+                </ul>
+                <form class="form-inline waves-effect waves-light">
+                    <input class="form-control" type="text" placeholder="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
 
 
 	<div class = "row">

@@ -1,3 +1,27 @@
+ html, body {
+    height: 100%;
+ }
+
+         /* Navigation*/
+.navbar {
+    background-color: transparent;
+}
+        
+.top-nav-collapse {
+    background-color: #304a74;
+}
+       
+footer.page-footer {
+    background-color: #304a74;
+}
+        
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}
+ 
+
 #btmlast20 {
 	position: relative;
 	top: 50px;
@@ -42,16 +66,20 @@ table {
 
 
 #formbody {
+	position: relative;
+	top: 20px;
+	left: 20%;
 	text-align: center;
-	margin-top: 50px;
-
 }
+
+
 
 .page-header {
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 100px;
 	font-size: 60px;
 	padding-bottom: 40px;
+	margin-left: 40%;
 }
 
 
@@ -59,7 +87,8 @@ table {
 #displaytext {
 	font-size: 16px;
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 40px;
+	margin-left: 40%;
 }
 
 label {
