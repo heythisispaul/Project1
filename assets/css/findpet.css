@@ -163,3 +163,17 @@ td {
 	height: 500px;
 	width: 500px;
 }
+
+.navbar{
+	background-color: #DFE9F0;
+}
+
+#footer {
+	position: relative;
+	top: 200px;
+	background-color: #DFE9F0;
+}
+
+#copyright{
+	background-color: #B2BAC0;
+}
