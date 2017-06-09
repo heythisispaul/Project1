@@ -4,13 +4,13 @@
 #btmlast20 {
 	position: relative;
 	top: 50px;
-	margin-bottom: 60px;
+	/*margin-bottom: 60px;*/
 }
 
 #btmnext20 {
 	position: relative;
 	top: 50px;
-	margin-bottom: 60px;
+	/*margin-bottom: 60px;*/
 }
 
 .next20, .last20, #backbtn {
@@ -157,9 +157,9 @@ td {
 }
 
 #footer {
-	position: relative;
-	top: 200px;
 	background-color: #DFE9F0;
+	position: relative;
+	top: 60px;
 }
 
 #copyright{
@@ -168,4 +168,8 @@ td {
 
 .form {
 	padding-bottom: 20px;
+}
+
+.jumbotron {
+	padding-bottom: 0;
 }
