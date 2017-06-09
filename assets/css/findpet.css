@@ -96,6 +96,13 @@ input {
 	justify-content: space-around;
 }
 
+#errorResponse {
+	color: red;
+	font-size: 24px;
+	font-style: italic;
+	text-align: center;t
+}
+
 #indbuttondisplay {
 	text-align: center;
 }
