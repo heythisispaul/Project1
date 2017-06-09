@@ -187,12 +187,12 @@ var search = function(num, offset) {
 var createPetTable = function(array) {
 
 	var limit = array.length;
-	var table = $("<table>").html("<tbody></tbody>");
+	var table = $("<table>").html("<tbody></tbody>").attr({"class": "container-fluid wow fadeIn", "data-wow-delay": "0.2s"});
 	var rowCount = 1;
 
 	for (i = 0; i < limit; i++) {
-		if (i % 5 == 0) {
-			var tr = $("<tr>").attr("id", ("tr" + rowCount));
+		if (i % 4 == 0) {
+			var tr = $("<tr>").attr("id", ("tr" + rowCount)).addClass('row');
 			table.append(tr);
 			rowCount += 1;
 		}
@@ -228,7 +228,7 @@ var createPetTable = function(array) {
 			}
 			pic = $("<img>").attr({src: picVal, animalId: array[i].id.$t, class: classVal});
 
-		var td = $("<td>").attr("id", ("pic" + i)).append(pic, name, breed, age);
+		var td = $("<td>").attr("id", ("pic" + i)).addClass("col-sm-3").css('text-align', 'center').addClass("card").append(pic, name, breed, age);
 		tr.append(td);
 
 	}
@@ -339,7 +339,7 @@ var displayAnimalPhotos = function(array, response) {
 		}		
 	}
 
-	var newDiv = $("<div>");
+	var newDiv = $("<div>").attr("class", "desdiv");
 	var newName = $("<p>").attr("id", "indname").text(response.petfinder.pet.name.$t);
 	var sex = response.petfinder.pet.sex.$t;
 		if (sex === "M"){
@@ -347,7 +347,14 @@ var displayAnimalPhotos = function(array, response) {
 		} else if (sex === "F") {
 			newName.css('color', '#ff80ab');
 		}
-	var description = $("<p>").attr("id", "description").text(response.petfinder.pet.description.$t);
+	var description = $("<p>").attr("id", "description");
+	
+
+	if(response.petfinder.pet.description.$t === undefined){
+		description.html("Sorry, there is no description for this pet.");
+	} else{
+		description.text(response.petfinder.pet.description.$t);
+	}
 	newDiv.append(newName, description);
 
 	$('#showanimal').append(newDiv);
@@ -373,7 +380,7 @@ var initMap = function(lat, lng) {
 };
 
 var formatContactInfo = function(object, appendDiv) {
-	var div = $("<div>").attr("class", "contactinfo");
+	var div = $("<div class='contactinfo'>");
 	var value;
 	for (key in object) {
 		if (object[key] === undefined) {

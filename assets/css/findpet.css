@@ -31,12 +31,13 @@ table {
 	margin-left: 40px;
 	margin-top: 40px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .animalpic .nopic{
 	padding-top: 20px;
 	padding-bottom: 10px;
+	display: block;
 }
 
 .animalpic:hover {
@@ -118,6 +119,7 @@ input {
 	font-size: 16px;
 	margin-top: 30px;
 	padding-bottom: 20px;
+	width: 100%;
 }
 
 .contactinfo {
@@ -139,7 +141,9 @@ td {
 	padding-top: 20px;
 	padding-bottom: 40px;
 	padding-left: 15px;
+	max-width: 10%;
 }
+
 
 .animalname {
 	font-size: 22px;
@@ -172,4 +176,13 @@ td {
 
 .jumbotron {
 	padding-bottom: 0;
+}
+
+.card > img {
+	width: 100%;
+}
+
+.desdiv {
+	width: 100%;
+	display: block;
 }
