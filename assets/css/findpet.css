@@ -141,7 +141,7 @@ td {
 	padding-top: 20px;
 	padding-bottom: 40px;
 	padding-left: 15px;
-	max-width: 10%;
+	max-width: 100%;
 }
 
 
@@ -179,7 +179,8 @@ td {
 }
 
 .card > img {
-	width: 100%;
+	width: 75%;
+	margin-left: 12.5%;
 }
 
 .desdiv {
