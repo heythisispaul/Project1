@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/MDBootStrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/MDBootStrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="../assets/MDBootStrap//css/mdb.min.css" rel="stylesheet">
+    <link href="assets/MDBootStrap/css/mdb.min.css" rel="stylesheet">
     
-    <link href="../assets/MDBootStrap/css/style.css" rel="stylesheet">
+    <link href="assets/MDBootStrap/css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -29,23 +29,25 @@
     <header>
         <!--Navbar-->
         <nav class="navbar navbar-toggleable-md navbar-light">
-            <div class="container">
+            <div class="container navContainer">
+
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                    <strong>ShelterPointer</strong>
+                <a class="navbar-brand logo" href="index">
+                    <img src="assets/images/doglogo.png" height="150px;" alt="ShelterPointer Logo" />
+                    <h1>ShelterPointer.com</h1>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav1">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index">Home<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up</a>
+                            <a class="nav-link" href="signup">Sign Up</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="findpet.html">Find a Friend</a>
+                            <a class="nav-link" href="findpet">Find a Friend</a>
                         </li>
         <!--            <li class="nav-item dropdown btn-group">
                             <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -79,22 +81,22 @@
         <div class="carousel-inner" role="listbox">
             <!--First slide-->
             <div class="carousel-item active">
-                <img src="../assets/images/puppy1.jpg" alt="First slide">
+                <img src="assets/images/puppy1.jpg" alt="First slide">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
-                <img src="../assets/images/cat1.jpg" alt="Second slide">
+                <img src="assets/images/cat1.jpg" alt="Second slide">
             </div>
             <!--/Second slide-->
             <!--Third slide-->
             <div class="carousel-item">
-                <img src="../assets/images/horse1.jpg" alt="Third slide">
+                <img src="assets/images/horse1.jpg" alt="Third slide">
             </div>
             <!--/Third slide-->
              <!--Fourth slide-->
             <div class="carousel-item">
-                <img src="../assets/images/dog1.jpg" alt="Fourth slide">
+                <img src="assets/images/dog1.jpg" alt="Fourth slide">
             </div>
             <!--/Fourth slide-->
         </div>
@@ -129,7 +131,7 @@
 
  <footer class="page-footer center-on-small-only">
         <!--Footer links-->
-        <div class="container-fluid">
+        <div class="container navContainer">
             <div class="row">
                 <!--First column-->
                 <div class="col-md-3 offset-lg-1 hidden-lg-down">
@@ -153,17 +155,17 @@
                 <!--/.Third column-->
                 <hr class="hidden-md-up">
                 <!--Fourth column-->
-                <div class="col-lg-2 col-md-4">
+                <div class="col-lg-2 col-md-4" id="lowerNav">
                     <h5 class="title"><strong>Go To</strong></h5>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index">Home</a>
                         </li>
                         <li>
-                            <a href="signUp.html">Sign Up</a>
+                            <a href="signup">Sign Up</a>
                         </li>
                         <li>
-                            <a href="findpet.html">Find a Friend</a>
+                            <a href="findpet">Find a Friend</a>
                         </li>
                     </ul>
                 </div>
@@ -187,15 +189,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../assets/MDBootStrap/js/tether.min.js"></script>
+    <script type="text/javascript" src="assets/MDBootStrap/js/tether.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../assets/MDBootStrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/MDBootStrap/js/bootstrap.min.js"></script>
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../assets/MDBootStrap/js/mdb.min.js"></script>
+    <script type="text/javascript" src="assets/MDBootStrap/js/mdb.min.js"></script>
+
     <script>
-    new WOW().init();
+        new WOW().init();
     </script>
 </body>
 </html>
