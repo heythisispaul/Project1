@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>ShelterPointer Search Page</title>
+    <title>ShelterPointer Search</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -18,51 +20,31 @@
     
     <link href="../assets/MDBootStrap/css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/findpet.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 
-    <!-- Template styles -->
-    <style rel="stylesheet">
-        /* TEMPLATE STYLES */
-        
-        main {
-            margin-top: 3rem;
-            ;
-        }
-         
-        main .card {
-            margin-bottom: 2rem;
-        }
-        
-        @media only screen and (max-width: 768px) {
-            .read-more {
-                text-align: center;
-
-        }
-    </style>
-	
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4" async defer></script>
 </head>
+
 <body>
 
-      <header>
+    <header>
         <!--Navbar-->
         <nav class="navbar navbar-toggleable-md navbar-light">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="splashpage.html">
+                <a class="navbar-brand" href="index.html">
                     <strong>ShelterPointer</strong>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav1">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="splashpage.html">Home<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up</a>
+                            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
+                            <a class="nav-link" href="signup.html">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="findpet.html">Find a Friend</a>
                         </li>
 <!--                         <li class="nav-item dropdown btn-group">
@@ -83,46 +65,78 @@
         <!--/.Navbar-->
     </header>
 
-    <div class="container-flex">
-	<div class = "row">
-		<div class = 'page-header'>Find a Pet</div>
-	</div>
-	<div class = "row" id="formrow">
-		<div class = "form">
-			<div class = "form-body" id ="formbody">
-				<label for = "zipCode" id="zipcodelabel">ZIP Code: (required)</label>
-				<input type="text" name="zipCode" maxlength="5" style = 'width: 100px; text-align: center' id = 'zipCode' placeholder="5 digits">
-				<label for = "animaltype" id="animaltypelabel"> Type of Animal: (required)</label>
-				<input type="text" name="animaltype" id = "animaltype" style = 'width: 150px; text-align: center' placeholder="dog, cat, horse">
-				<label for="breed" id="breedlabel">Breed:</label>
-				<input type="text" name="breed" id = "breed" style = 'width: 200px; text-align: center' placeholder = "labrador, tabby, arabian">
-				<button class = "btn btn-primary" id = "searchButton">SEARCH</button>
-			</div>
+    <main>
+        <!--Main layout-->
+        <div class="container">
 
-				<p id ="displaytext">Click on an image to find out more about your next pet!</p>
-		</div>
-	</div>
-	<div class = "container container-flex" id = "initialdisplay">
-		<div class = "row" id = "buttondisplay"></div>
-		<div class = "row" id = "displayrow"></div>
-		<div class = "row" id ="bottombuttons"></div>
-	</div>
+            <!--Page heading-->
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive">Search
+                        <small class="text-muted">&nbsp;we'll help you find your new pet</small>
+                    </h1>
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
 
-	<div class = "jumbotron" id = "picturedisplay">
-		<div class="row" id = "indbuttondisplay"></div>
-		<div class = "row" id = 'showanimal'>
-		</div>
-	</div>
+            <!--First row-->
+            <div class="row wow fadeIn" data-wow-delay="0.2s">
+                <!--First column-->
+                <div class="col-lg-12">
+                    <!--Card-->
+                    <div class="card">
+                        <div class="card-block">
+                            <!--Title-->
+                            <h2 class="card-title">Find Your Pet</h2>
+                            <!--Text-->
+                            <p class="card-text">Enter your critera below</p>
+                            <br>
+                            <div class="md-form col-md-4 searchFields">
+                                <input name= "zipCode" type="text" class="form-control" id="zipCode" maxLength="5" placeholder="5 digits">
+                                <label for="zipCode" class="">Zip Code</label>
+                            </div>
+                            <div class="md-form col-md-4 searchFields">
+                                <input name= "zipCode" type="text" class="form-control" id="animaltype" placeholder="dog, cat, horse">
+                                <label for="animaltype" class="">Type of Animal</label>
+                            </div>  
+                            <div class="md-form col-md-4 searchFields">
+                                <input name= "breed" type="text" class="form-control" id="breed" placeholder="Labrador, Tabby, Arabian, etc">
+                                <label for="breed" class="">Breed</label>
+                            </div>        
+                            <a class="btn btn-warning btn-rounded" id="searchButton">Submit</a>
+                        </div>                     
+                    </div>
+                        <!--/.Card content-->
+                        <div class = "container container-flex" id = "initialdisplay">
+                                <div class = "row" id = "buttondisplay"></div>
+                                <div class = "row" id = "displayrow"></div>
+                                <div class = "row" id ="bottombuttons"></div>
+                        </div>
+                        <div class = "jumbotron" id = "picturedisplay">
+                            <div class="row" id = "indbuttondisplay"></div>
+                            <div class = "row" id = 'showanimal'></div>
+                    </div>
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/.First column-->
+            </div>
 
-           <!--Footer-->
-    <footer class="page-footer center-on-small-only" id="footer">
+            </div>
+            <!--/.First row-->
+
+    </main>
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
         <!--Footer links-->
         <div class="container-fluid">
             <div class="row">
                 <!--First column-->
                 <div class="col-md-3 offset-lg-1 hidden-lg-down">
-                    <h5 class="title"><strong>About PetConnect</strong></h5>
-                    <p>Pet connect was built with MDBootstrap and finds pets using Petfinder.com's API for searches. Maps are provided by Google.</p>
+                    <h5 class="title"><strong>About ShelterPointer</strong></h5>
+                    <p>Pet connect was built with MDBootstrap and searches for pets using Petfinder.com's API. Maps are provided by Google.</p>
                 </div>
                 <!--/.First column-->
                 <hr class="hidden-md-up">
@@ -145,7 +159,7 @@
                     <h5 class="title"><strong>Go To:</strong></h5>
                     <ul>
                         <li>
-                            <a href="splashpage.html">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
                             <a href="signUp.html">Sign Up</a>
@@ -163,7 +177,7 @@
         <!--/.Call to action-->
 
         <!--Copyright-->
-        <div class="footer-copyright" id="copyright">
+        <div class="footer-copyright">
             <div class="containter-fluid">
                 © 2017 Copyright: Jeff, Chris, and Paul </a>
             </div>
@@ -172,12 +186,13 @@
     </footer>
     <!--/.Footer-->
 
-    </div>
+    <!-- SCRIPTS -->
 
-	
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAINZl8Ilz0R1w4Yx4ziAOM7SoCr-42DS4" async defer></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-</script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="../assets/MDBootStrap/js/tether.min.js"></script>
 
@@ -186,11 +201,17 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../assets/MDBootStrap/js/mdb.min.js"></script>
-<script type="text/javascript" src = "../assets/javascript/app.js">
-</script>
-<script>
-    new WOW().init();
-    </script>
 
+    <!-- Firebase     -->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+
+    <!-- External Script -->
+    <script type="text/javascript" src = "../assets/javascript/app.js"></script>
+    
+    <script>
+        new WOW().init();
+    </script>
+    
 </body>
+
 </html>

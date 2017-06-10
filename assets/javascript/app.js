@@ -380,7 +380,8 @@ var initMap = function(lat, lng) {
 };
 
 var formatContactInfo = function(object, appendDiv) {
-	var div = $("<div class='contactinfo'>");
+	var div1 = $("<div class='card' id='contactCard'>");
+	var div2 = $("<div class='card-block contactinfo'>").append("<h2 class=\"card-title\">Contact Shelter</h2>");
 	var value;
 	for (key in object) {
 		if (object[key] === undefined) {
@@ -388,9 +389,10 @@ var formatContactInfo = function(object, appendDiv) {
 		} else {
 			value = object[key];
 		}
-		div.append("<p>" + key + ":&nbsp;&nbsp;&nbsp;" + value + "</p>");
+		div2.append("<p class=\"card-text\">" + key + ":&nbsp;&nbsp;&nbsp;" + value + "</p>");
 	}
-	div.appendTo($("#" + appendDiv));
+	div1.append(div2);
+	div1.appendTo($("#" + appendDiv));
 };
 
 var displayShelterInfo = function(object) {
@@ -401,7 +403,7 @@ var displayShelterInfo = function(object) {
 		State: object.petfinder.shelter.state.$t,
 		Zip: object.petfinder.shelter.zip.$t,
 		Phone: object.petfinder.shelter.phone.$t,
-		Email: object.petfinder.shelter.email.$t
+		Email: "<a href=\"mailto:" + object.petfinder.shelter.email.$t + "\">" + object.petfinder.shelter.email.$t + "</a>"
 	};
 
 	formatContactInfo(info, "showanimal");
