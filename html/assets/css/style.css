@@ -1,0 +1,277 @@
+body {
+	background-color: #F8F8FE;
+}
+
+footer {
+	bottom: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+main {
+    margin-top: 4rem;
+    min-height: 600px;
+}
+         
+main .card {
+    margin-bottom: 2rem;
+}
+
+td > img {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+}
+        
+      
+.carousel-inner {
+	box-shadow: 0px 6px 40px #888888;
+}
+
+.contactinfo {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.contactinfo > p {
+	line-height: 2em;
+	margin-bottom: 0;
+}
+
+.h1-responsive {
+	text-align: center;
+	position: relative;
+	top: 35px;
+	padding-bottom: 40px;
+}
+
+.h4-responsive {
+	display: block;
+	padding-bottom: 40px;
+	margin-left: 20px;
+	text-indent: 20px;
+	line-height: 2.5rem;
+	margin-top: 20px;
+}
+
+.logo > img {
+	float: left;
+	margin-top: -2%;
+}
+
+.logo > h1 {
+	margin-top: 25%;
+}
+
+.navbar {
+	height: 150px;
+}
+
+.searchFields {
+	float: left;
+}
+
+#carousel-example-1z {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1920px;
+}
+
+#contactCard {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+}
+
+#description {
+	margin-top: 2%;
+	margin-bottom: 4%;
+}
+
+#indname {
+	font-size: 1.5em;
+	margin-top: 2%;
+}
+
+#map {
+	height: 500px;
+	width: 500px;
+}
+
+#navbarNav1 {
+	margin-left: 40%;
+}
+
+#shelterpointer {
+	color: #428BCA;
+}
+
+#showanimal > img {
+	margin-top: 2%;
+	margin-bottom: : 1%;
+}
+
+/*@media only screen and (max-width: 768px) {
+    
+    .read-more {
+        text-align: center;
+
+    }
+
+}*/
+
+/* Mobile */
+@media (max-width: 767px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-item > img {
+         width: 100%;
+         height: 100%;
+    }
+    .read-more {
+        text-align: center;
+    }
+    #carousel-example-1z {
+		width: auto;
+		height: auto;
+	}
+	#contactCard {
+		margin-top: 5%;
+	}
+	#contactCard, #map {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* tablets */
+@media (max-width: 991px) and (min-width: 768px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-item > img {
+         width: 100%;
+         height: 100%;
+    }
+    .logo > img {
+		float: left;
+		margin-top: -2%;
+	}
+	.logo > h1 {
+		margin-top: 25%;
+	}
+    #carousel-example-1z {
+		width: auto;
+		height: auto;
+	}
+	#contactCard {
+		margin-top: 5%;
+	}
+	#contactCard, #map {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* laptops */
+@media (max-width: 1023px) and (min-width: 992px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-item > img {
+         width: 100%;
+         height: 100%;
+    }
+    .logo {
+		margin-left: -2%;
+	}
+    #carousel-example-1z {
+		width: auto;
+		height: auto;
+	}
+	#contactCard {
+		margin-top: 2%;
+	}
+	#navbarNav1 {
+		margin-left: 35%;
+		margin-top: 7%;
+	}
+}
+
+/* desktops */
+@media (max-width: 1199px) and (min-width: 1024px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-item > img {
+         width: 100%;
+         height: 100%;
+    }
+    #carousel-example-1z {
+		width: auto;
+		height: auto;
+	}
+	#navbarNav1 {
+		margin-left: 35%;
+		margin-top: 7%;
+	}
+}
+
+/* large displays */
+@media (max-width: 1919px) and (min-width: 1200px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-item > img {
+         width: 100%;
+         height: 100%;
+    }
+    #carousel-example-1z {
+		width: auto;
+		height: auto;
+	}
+	#lowerNav {
+		text-align: right;
+	}
+	#navbarNav1 {
+		margin-left: 45%;
+		margin-top: 7%;
+	}
+}
+
+/* ex-large displays */
+@media (min-width: 1920px) {
+    .carousel-item {
+        height: auto;
+    }
+    .carousel-item > img {
+         width: 100%;
+         height: 100%;
+    }
+    .navContainer {
+    	width: 70%;
+    }
+    #carousel-example-1z {
+		margin-left: auto;
+		margin-right: auto;
+		width: 1920px;
+	}
+	#lowerNav {
+		text-align: right;
+	}
+	#navbarNav1 {
+		margin-left: 54%;
+		margin-top: 4%;
+	}
+}

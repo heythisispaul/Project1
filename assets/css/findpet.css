@@ -105,7 +105,7 @@ input {
 }
 
 .contactinfo {
-	font-size: 20px;
+	font-size: 20px;+2
 	font-weight: bold;
 	margin-top: 10px;
 	margin-left: 60px;
@@ -138,6 +138,14 @@ td p{
 	cursor: pointer;
 }
 
+<<<<<<< HEAD
 .jumbotron {
 	background-color: white;
 }
+=======
+#map {
+	display: block;
+	height: 500px;
+	width: 500px;
+}
+>>>>>>> 76f4230baeb5264077f0dee0b34a07a67dc8d9ca
