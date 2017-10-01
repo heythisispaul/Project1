@@ -66,6 +66,20 @@ td > img {
 	height: 100px;
 }
 
+#logo {
+	position: relative;
+	left: -50%;
+}
+
+#name {
+	margin-top: -20%;
+	padding-right: 20px;
+}
+
+#lowerNav {
+	float: right;
+}
+
 .searchFields {
 	float: left;
 }
@@ -97,13 +111,14 @@ td > img {
 	width: 500px;
 }
 
+
 #shelterpointer {
 	color: #428BCA;
 }
 
 #showanimal > img {
 	margin-top: 2%;
-	margin-bottom: : 1%;
+	margin-bottom: 1%;
 }
 
 .animalpic:hover, .btn:hover {
