@@ -77,7 +77,8 @@ td > img {
 }
 
 #lowerNav {
-	float: right;
+	position: relative;
+	left: 50%;
 }
 
 .searchFields {
